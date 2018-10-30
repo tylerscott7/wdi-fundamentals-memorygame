@@ -22,6 +22,13 @@ cardImage:'images/king-of-diamonds.png',
 }
 ];
 
+var score = 0;
+
+var addToScore = function(){
+	score += 1;
+	document.getElementById('score').innerHTML = "Score: " + score;
+}
+
 //Playing Boards
 
 var createBoard = function(){
@@ -42,6 +49,7 @@ var checkForMatch = function(){
 	var numCards = cardsInPlay.length;
 	if (cardsInPlay[numCards-2].rank === cardsInPlay[numCards-1].rank) {
 		console.log("You found a match!");
+		addToScore();
 	} else {
 		console.log("Sorry, try again.");
 	}
